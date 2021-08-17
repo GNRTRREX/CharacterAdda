@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #d1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            background-color: skyblue;
+            text-shadow: 0px 0px 1px black, 0px 0px 5px rgb(255, 255, 255);
+        }
+
+        .bts {
+            font-family: monospace;
+            font-size: 1.5rem;
+            margin: 15px 0px;
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+        }
+
+        #d2 {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ck {
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            background-color: #efefef;
+            padding: 10px 10px;
+            margin: 5px 0px;
+            border-radius: 20px;
+        }
+
+        .ch {
+            /* font-size: 1.3rem; */
+            padding: 0px 10px;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            /* -webkit-appearance: none; */
+            /* appearance: none; */
+        }
+
+        #dd {
+            display: flex;
+            justify-content: space-evenly;
+            width: 450px;
+        }
+
+        #text1 {
+            height: 20vh;
+            /* font-size: 1.5rem; */
+            margin: 10px auto;
+            width: 90vw;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="d" id="d1">
+        <h1>CharacterAdda</h1>
+    </div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Welcome!</strong> Enter Your Text Below
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <form id="d2" method="POST" action="/about/">{% csrf_token %}
+        <textarea name="tex" id="text1" cols="30" rows="10"></textarea>
+        <div id="dd2" class="ck"><span class="ch">Remove punctuations from my para</span><input type="checkbox"
+                name="check" id="check" class="ch"></div>
+
+        <div id="dd3" class="ck"><span class="ch">Make my para uppercase</span><input type="checkbox" name="check1"
+                id="check1" class="ch"></div>
+
+        <div id="dd33" class="ck"><span class="ch">Make my para lowercase</span><input type="checkbox" name="check11"
+                id="check11" class="ch"></div>
+
+        <div id="dd4" class="ck"><span class="ch">Remove new lines</span><input type="checkbox" name="check2"
+                id="check2" class="ch"></div>
+
+        <div id="dd5" class="ck"><span class="ch">Remove extra spaces</span><input type="checkbox" name="check3"
+                id="check3" class="ch"></div>
+
+        <div id="dd6" class="ck"><span class="ch">Count number of characters</span><input type="checkbox" name="check4"
+                id="check4" class="ch"></div>
+
+        <div id="dd"><button class="bts" type="submit">Submit</button><button class="bts" type="reset">Clear</button>
+        </div>
+    </form>
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+
+</html>
